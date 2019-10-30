@@ -3,11 +3,11 @@ import os
 import random as rd
 
 #Nome da pasta
-file = input("Informa aê o nome da pasta(obs: o programa é Case-sensitive).: ")
+file = input("Informa aê o caminho da pasta(obs: o programa é Case-sensitive).: ")
 
 queue = []
 
-for i in os.listdir(os.path.abspath(file)):
+for i in os.listdir(file):
     queue.append(i)
 
 img = cv2.imread(os.path.abspath(file)+'/'+queue[rd.randint(0,(len(queue)-1))])
