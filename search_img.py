@@ -3,8 +3,16 @@ import os
 import random as rd
 
 #Nome da pasta
-file = input("Informa aê o caminho da pasta(obs: o programa é Case-sensitive).: ")
 
+def path(file):
+    return os.path.abspath(file)
+
+moves = open(path('path.txt'), 'r')
+file =''
+
+for i in moves:
+    file = i
+file = file.translate({ord('\n'): None})
 queue = []
 
 for i in os.listdir(file):
